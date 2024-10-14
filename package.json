@@ -13,7 +13,7 @@
     "@astrojs/check": "^0.9.3",
     "@astrojs/rss": "^4.0.7",
     "@astrojs/sitemap": "^3.1.6",
-    "astro": "^4.15.6",
+    "astro": "^4.16.1",
     "orgast-util-visit-ids": "^1.0.1",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-highlight": "^7.0.0",
