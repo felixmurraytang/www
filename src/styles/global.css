@@ -1,77 +1,14 @@
-@import './headings.css';
 @import './org-mode.css';
 
 @font-face {
-    font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu-Bold.ttf') format('truetype');
-    font-weight: 700;
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
     font-style: normal;
 }
 @font-face {
-    font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
+    font-family: 'EB Garamond';
+    src: url('/fonts/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
     font-style: italic;
-}
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu-Light.ttf') format('truetype');
-    font-weight: 300;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu-LightItalic.ttf') format('truetype');
-    font-weight: 300;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu-Medium.ttf') format('truetype');
-    font-weight: 500;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu-MediumItalic.ttf') format('truetype');
-    font-weight: 500;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Ubuntu';
-    src: url('/fonts/Ubuntu-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Ubuntu Mono';
-    src: url('/fonts/UbuntuMono-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Ubuntu Mono';
-    src: url('/fonts/UbuntuMono-BoldItalic.ttf') format('truetype');
-    font-weight: 700;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Ubuntu Mono';
-    src: url('/fonts/UbuntuMono-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Ubuntu Mono';
-    src: url('/fonts/UbuntuMono-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
 }
 
 html {
@@ -80,10 +17,11 @@ html {
 }
 
 body {
-    max-width: 42em;
+    max-width: 38em;
     margin: 0 auto;
     padding: 0 1rem;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'EB Garamond', serif;
+    font-size: large;
 }
 
 main {
@@ -101,7 +39,7 @@ hr {
 }
 
 pre {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: monospace;
 }
 
 a {
@@ -123,7 +61,8 @@ strong {
 code,
 kbd,
 samp {
-    font-family: 'Ubuntu Mono', monospace;
+    font-family: monospace;
+    font-size: 0.9em;
 }
 
 small {
@@ -257,7 +196,52 @@ template {
     display: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    line-height: 1.2;
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+    font-size: 1.2em;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    text-decoration: none;
+    color: inherit;
+}
 
+body { counter-reset: h2counter; }
+h2 { counter-reset: h3counter; }
+h3 { counter-reset: h4counter; }
+h4 { counter-reset: h5counter; }
+h5 { counter-reset: h6counter; }
+h2:before {
+    counter-increment: h2counter;
+    content: counter(h2counter) ". ";
+}
+h3:before {
+    counter-increment: h3counter;
+    content: counter(h2counter) "." counter(h3counter) ". ";
+}
+h4:before {
+    counter-increment: h4counter;
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ". ";
+}
+h5:before {
+    counter-increment: h5counter;
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ". ";
+}
+h6:before {
+    counter-increment: h6counter;
+    content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ". ";
+}
+h2.nocount:before,
+h3.nocount:before,
+h4.nocount:before,
+h5.nocount:before,
+h6.nocount:before {
+    content: "";
+    counter-increment: none;
+}
 
 ul, ol {
     margin: auto;
