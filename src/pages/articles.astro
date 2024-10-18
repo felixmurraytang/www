@@ -24,13 +24,13 @@ const blogs = collection.filter((note: any) => note.data.filetags?.includes('art
 						blogs.map((note: any) => (
 							<li>
 								<p>
-									<span class="date" style="font-size: 0.8em;">
+									<span class="date" style="font-size: 0.9em;">
 										{note.data.date.toLocaleDateString('en-US', {
 											month: 'short',
 											year: 'numeric',
 										})}
 									</span>
-									<span class="tag" style="font-size: 0.8em;">
+									<span class="tag" style="font-size: 0.9em;">
 										{note.data.filetags?.filter((tag: any) => tag !== 'article').map((tag: any) => `#${tag}`).join(' ')}
 									</span>
 									<h2 class="title" style="font-size: 1.2em; margin: 0 0 0.5em 0; padding: 0; line-height: 1.2;">

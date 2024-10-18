@@ -1,5 +1,3 @@
-@import './org-mode.css';
-
 @font-face {
     font-family: 'EB Garamond';
     src: url('/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
@@ -28,8 +26,15 @@ main {
     display: block;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin-block-start: 1rem;
+    margin-block-end: 1rem;
+    line-height: 1.2;
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+}
 h1 {
-    font-size: 1.2em;
+    font-size: 1.7em;
 }
 
 hr {
@@ -46,6 +51,10 @@ a {
     background-color: transparent;
     color: inherit;
 }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    text-decoration: none;
+    color: inherit;
+}
 
 abbr[title] {
     border-bottom: none;
@@ -55,7 +64,7 @@ abbr[title] {
 
 b,
 strong {
-    font-weight: bolder;
+    font-weight: 500;
 }
 
 code,
@@ -196,19 +205,7 @@ template {
     display: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin-block-start: 1rem;
-    margin-block-end: 1rem;
-    line-height: 1.2;
-    font-family: 'EB Garamond', serif;
-    font-weight: 500;
-    font-size: 1.2em;
-}
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-    text-decoration: none;
-    color: inherit;
-}
-
+/* add counters to headings */
 body { counter-reset: h2counter; }
 h2 { counter-reset: h3counter; }
 h3 { counter-reset: h4counter; }
@@ -217,22 +214,27 @@ h5 { counter-reset: h6counter; }
 h2:before {
     counter-increment: h2counter;
     content: counter(h2counter) ". ";
+    color: #808080;
 }
 h3:before {
     counter-increment: h3counter;
     content: counter(h2counter) "." counter(h3counter) ". ";
+    color: #808080;
 }
 h4:before {
     counter-increment: h4counter;
     content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ". ";
+    color: #808080;
 }
 h5:before {
     counter-increment: h5counter;
     content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ". ";
+    color: #808080;
 }
 h6:before {
     counter-increment: h6counter;
     content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ". ";
+    color: #808080;
 }
 h2.nocount:before,
 h3.nocount:before,
@@ -243,6 +245,7 @@ h6.nocount:before {
     counter-increment: none;
 }
 
+/* lists fix */
 ul, ol {
     margin: auto;
 }
@@ -250,27 +253,20 @@ ul li p, ol li p {
     margin: auto;
 }
 
-/* @media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #e0e0e0;
-    } */
-    /* h1 {
-        color: #ffffff;
-    }
-    h2 {
-        color: #8080ff;
-    }
-    h3 {
-        color: #ff4d4d;
-    }
-    h4 {
-        color: #ffa64d;
-    }
-    h5 {
-        color: #e6b800;
-    }
-    h6 {
-        color: #a39480;
-    } */
-/* } */
+/* Org mode specific styles */
+.inline-verbatim {
+    color: rgb(200, 60, 60);
+}
+.inline-code {
+    color: rgb(60,120,120);
+}
+
+.todo-keyword {
+    font-family: monospace;
+}
+.TODO { 
+    color: #D80000;
+}
+.DONE {
+    color: #008000;
+}
