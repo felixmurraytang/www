@@ -32,9 +32,10 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2;
     font-family: 'EB Garamond', serif;
     font-weight: 500;
+    font-size: 1em;
 }
 h1 {
-    font-size: 1.7em;
+    font-size: 1em;
 }
 
 hr {
@@ -214,27 +215,22 @@ h5 { counter-reset: h6counter; }
 h2:before {
     counter-increment: h2counter;
     content: counter(h2counter) ". ";
-    color: #808080;
 }
 h3:before {
     counter-increment: h3counter;
     content: counter(h2counter) "." counter(h3counter) ". ";
-    color: #808080;
 }
 h4:before {
     counter-increment: h4counter;
     content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) ". ";
-    color: #808080;
 }
 h5:before {
     counter-increment: h5counter;
     content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) ". ";
-    color: #808080;
 }
 h6:before {
     counter-increment: h6counter;
     content: counter(h2counter) "." counter(h3counter) "." counter(h4counter) "." counter(h5counter) "." counter(h6counter) ". ";
-    color: #808080;
 }
 h2.nocount:before,
 h3.nocount:before,
